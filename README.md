@@ -5,7 +5,7 @@ Daily Flight Data Analysis Automation Pipeline is a comprehensive project design
 
 
 ## Steps in the Pipeline
-Step 1: Fetching and Storing Raw Flight Data
+**Step 1: Fetching and Storing Raw Flight Data**
 
 Source: Flight data is fetched daily from aviationstack.com API.
 
@@ -18,8 +18,8 @@ Output:
 Raw data is available in S3 for further processing.
 
 
-Step 2: Data Transformation and Processing
-
+**Step 2: Data Transformation and Processing
+**
 Source: The raw flight data stored in S3.
 
 Process:
@@ -31,7 +31,7 @@ Output:
 
 Transformed data is ready for metadata creation and querying.
 
-Step 3: Metadata Management
+**Step 3: Metadata Management**
 
 Tool: AWS Glue Crawler
 
@@ -42,7 +42,7 @@ Metadata is created and maintained in the AWS Glue Data Catalog.
 
 Output: A structured schema of the processed flight data for querying.
 
-Step 4: Querying and Visualization
+**Step 4: Querying and Visualization**
 
 Tools: AWS Athena and Amazon QuickSight
 
