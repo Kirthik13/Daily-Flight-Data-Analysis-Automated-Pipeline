@@ -18,8 +18,8 @@ Output:
 Raw data is available in S3 for further processing.
 
 
-**Step 2: Data Transformation and Processing
-**
+**Step 2: Data Transformation and Processing**
+
 Source: The raw flight data stored in S3.
 
 Process:
