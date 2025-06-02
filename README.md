@@ -1,74 +1,26 @@
+# ✈️ Daily Flight Data Ingestion & Automation Pipeline
 
-# Project Title
+This project automates the ingestion and processing of daily flight data using AWS native services. It includes orchestration, metadata cataloging, and alerting.
 
-Daily Flight Data Analysis Automation Pipeline is a comprehensive project designed to automate the fetching, transformation, storage, querying, and visualization of daily flight data. This pipeline ensures seamless daily updates and insights from flight data while maintaining automation through AWS services and step functions.
+## 🚀 Tech Stack
+- Python
+- AWS Lambda
+- AWS Step Functions
+- Amazon S3
+- AWS Glue Crawler
+- AWS Glue Catalog
+- Amazon EventBridge
+- Amazon SNS
+- Amazon QuickSight
 
+## 📌 Features
+- Daily scheduled ingestion pipeline triggered via Step Functions
+- Flight data stored in S3 and cataloged using Glue Crawler
+- EventBridge rules trigger alerting workflows via SNS
+- Data made available for visualization in Amazon QuickSight
 
-## Steps in the Pipeline
-**Step 1: Fetching and Storing Raw Flight Data**
-
-Source: Flight data is fetched daily from aviationstack.com API.
-
-Process:
-
-A Lambda function triggers the API to fetch the latest flight data.
-The raw flight data is stored in an S3 bucket, partitioned by the current date.
-
-Output: 
-Raw data is available in S3 for further processing.
-
-
-**Step 2: Data Transformation and Processing**
-
-Source: The raw flight data stored in S3.
-
-Process:
-Another Lambda function retrieves the raw data from the S3 bucket.
-Data is transformed to align with the requirements of the target dashboard insights.
-The processed data is stored in a separate S3 bucket named "processed bucket," partitioned by the current date.
-
-Output: 
-
-Transformed data is ready for metadata creation and querying.
-
-**Step 3: Metadata Management**
-
-Tool: AWS Glue Crawler
-
-Process:
-
-A Glue Crawler scans the processed flight data in the S3 "processed bucket."
-Metadata is created and maintained in the AWS Glue Data Catalog.
-
-Output: A structured schema of the processed flight data for querying.
-
-**Step 4: Querying and Visualization**
-
-Tools: AWS Athena and Amazon QuickSight
-
-Process:
-Glue Catalog is connected to AWS Athena to enable SQL-like querying of the data.
-Athena is further connected to Amazon QuickSight to create interactive dashboards.
-Dashboards are scheduled to refresh daily to provide up-to-date flight insights.
-
-Output: Visualizations and insights into daily flight data.
-
-
-## Tech Stack
-
-**AWS Lambda:** For executing the functions to fetch and transform data.
-
-**Amazon S3:** For storing raw and processed flight data.
-
-**AWS Glue:** For metadata management and creating a data catalog.
-
-**AWS Athena:** For querying the data using SQL-like syntax.
-
-**Amazon QuickSight:** For creating interactive dashboards and visualizations.
-
-**AWS Step Functions:** For orchestrating the entire pipeline.
-
-**Amazon EventBridge:** For scheduling the daily trigger of the pipeline.
-
-**Amazon SNS:** For sending notifications upon completion of each pipeline task.
-
+## 🏗️ Architecture
+1. Step Function triggers a Lambda to fetch and write flight data to S3
+2. Glue Crawler updates metadata in Glue Catalog
+3. EventBridge monitors pipeline status and triggers notifications
+4. Quicksight uses the cataloged data for dashboarding
