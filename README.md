@@ -53,3 +53,22 @@ Dashboards are scheduled to refresh daily to provide up-to-date flight insights.
 
 Output: Visualizations and insights into daily flight data.
 
+
+## Tech Stack
+
+**AWS Lambda:** For executing the functions to fetch and transform data.
+
+**Amazon S3:** For storing raw and processed flight data.
+
+**AWS Glue:** For metadata management and creating a data catalog.
+
+**AWS Athena:** For querying the data using SQL-like syntax.
+
+**Amazon QuickSight:** For creating interactive dashboards and visualizations.
+
+**AWS Step Functions:** For orchestrating the entire pipeline.
+
+**Amazon EventBridge:** For scheduling the daily trigger of the pipeline.
+
+**Amazon SNS:** For sending notifications upon completion of each pipeline task.
+
