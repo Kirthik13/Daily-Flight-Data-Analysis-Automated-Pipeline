@@ -24,3 +24,5 @@ This project automates the ingestion and processing of daily flight data using A
 2. Glue Crawler updates metadata in Glue Catalog
 3. EventBridge monitors pipeline status and triggers notifications
 4. Quicksight uses the cataloged data for dashboarding
+
+![Architecture](https://github.com/user-attachments/assets/32c8843a-bb64-46d3-a83b-15f88165a47e)
